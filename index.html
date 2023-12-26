@@ -596,21 +596,30 @@
 
   <script>
 	const form = document.querySelector('.bg-light p-4 p-md-5 contact-form')
-	const name = document.querySelector('.name')
-	const email = document.querySelector('.email')
-	const msg = document.querySelector('.msg')
 
-	// Function
+// function 2 send
+	function sendMsg(e){
+		e.preventDefault();
+		
+		const name = document.querySelector('.name')
+			email = document.querySelector('.email')
+			msg = document.querySelector('.msg')
 
-	Email.send({
-		SecureToken : "",
-		To : 'them@website.com',
-		From : "you@isp.com",
-		Subject : "This is the subject",
-		Body : "And this is the body"
-		}).then(
-			message => alert(message)	
-		);
+		
+		Email.send({
+			SecureToken : "4b7bab6a-2a1d-4be1-b273-4c4cdeb884bc",
+			To : 'rxjpatil@gmail.com',
+			From : email.value,
+			Subject : "Contact form",
+			Body : msg.value
+			}).then(
+				message => alert(message)	
+			);
+		}
+
+// add submit
+	form.addEventListener('submit',sendMsg);
+
 
 
   </script>
